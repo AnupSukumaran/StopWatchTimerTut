@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +12,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatchTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbV-3l-S4Q">
+                                <rect key="frame" x="16" y="317.5" width="343" height="32"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u01-Oq-9zw">
+                                <rect key="frame" x="260" y="402.5" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FFH-bZ-iIZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1y-Y2-Bbj">
+                                <rect key="frame" x="164.5" y="402.5" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="H5a-nI-Agl"/>
+                                    <constraint firstAttribute="width" constant="46" id="uqb-Sn-Z3W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kQM-DB-QmX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-zb-fhr">
+                                <rect key="frame" x="68" y="402.5" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9or-BL-B1G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KbV-3l-S4Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="276-vK-cYc"/>
+                            <constraint firstItem="KbV-3l-S4Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BQf-zq-7l9"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="height" secondItem="3hO-zb-fhr" secondAttribute="height" id="BvU-I8-rYr"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="top" secondItem="3hO-zb-fhr" secondAttribute="top" id="Je0-ZM-Jq7"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="width" secondItem="3hO-zb-fhr" secondAttribute="width" id="Jz5-ca-AYj"/>
+                            <constraint firstItem="u01-Oq-9zw" firstAttribute="leading" secondItem="F1y-Y2-Bbj" secondAttribute="trailing" constant="49.5" id="MRM-HV-vPB"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="top" secondItem="u01-Oq-9zw" secondAttribute="top" id="Rwu-Mg-YhK"/>
+                            <constraint firstItem="KbV-3l-S4Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WgP-2q-XHT"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="top" secondItem="KbV-3l-S4Q" secondAttribute="bottom" constant="53" id="ZSI-cU-90T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbV-3l-S4Q" secondAttribute="trailing" constant="16" id="a7e-QB-1iY"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="leading" secondItem="3hO-zb-fhr" secondAttribute="trailing" constant="50.5" id="jQw-He-QV6"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="width" secondItem="u01-Oq-9zw" secondAttribute="width" id="kX5-IN-11a"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="height" secondItem="u01-Oq-9zw" secondAttribute="height" id="mL0-aY-0Zl"/>
+                            <constraint firstItem="F1y-Y2-Bbj" firstAttribute="centerX" secondItem="KbV-3l-S4Q" secondAttribute="centerX" id="shg-8f-u5v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="KbV-3l-S4Q" id="aoD-X6-91s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
