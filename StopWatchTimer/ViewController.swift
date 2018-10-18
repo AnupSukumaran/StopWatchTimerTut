@@ -13,7 +13,7 @@ import AudioToolbox
 class ViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
-   // var resumeTapped = false
+    var audioPlayer = AVAudioPlayer()
     
     var seconds = 10 //This variable will hold a starting value of seconds. It could be any amount above 0.
     var tempSec = 0
@@ -24,6 +24,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
          timerLabel.text = timeString(time: TimeInterval(seconds))
          tempSec = seconds
+        playAudioFile()
+    }
+    
+    //MARK: call audio file
+    func playAudioFile() {
+        do {
+            guard let content = Bundle.main.path(forResource: "sample", ofType: "mp3") else {print("content😩");return}
+            let url = URL(fileURLWithPath: content )
+            audioPlayer = try AVAudioPlayer(contentsOf: url )
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch let error {
+            print(" error = \(error.localizedDescription)😩")
+        }
     }
     
     //MARK: Setting Timmer
@@ -56,6 +70,7 @@ class ViewController: UIViewController {
         timerLabel.text = timeString(time: TimeInterval(tempSec))
         print("tempec = \(tempSec)")
         if tempSec < 6 {
+            audioPlayer.stop()
             timerLabel.textColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
             AudioServicesPlaySystemSound(SystemSoundID(1001))
         }

@@ -12,6 +12,7 @@
 		5A156F982178539C00A617AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A156F962178539C00A617AD /* Main.storyboard */; };
 		5A156F9A2178539F00A617AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A156F992178539F00A617AD /* Assets.xcassets */; };
 		5A156F9D2178539F00A617AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A156F9B2178539F00A617AD /* LaunchScreen.storyboard */; };
+		5A156FA621789EF400A617AD /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A156FA521789EF400A617AD /* sample.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5A156F992178539F00A617AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A156F9C2178539F00A617AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A156F9E2178539F00A617AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A156FA521789EF400A617AD /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		5A156F912178539B00A617AD /* StopWatchTimer */ = {
 			isa = PBXGroup;
 			children = (
+				5A156FA421789EC400A617AD /* Music */,
 				5A156F922178539B00A617AD /* AppDelegate.swift */,
 				5A156F942178539B00A617AD /* ViewController.swift */,
 				5A156F962178539C00A617AD /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				5A156F9E2178539F00A617AD /* Info.plist */,
 			);
 			path = StopWatchTimer;
+			sourceTree = "<group>";
+		};
+		5A156FA421789EC400A617AD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				5A156FA521789EF400A617AD /* sample.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +136,7 @@
 				5A156F9D2178539F00A617AD /* LaunchScreen.storyboard in Resources */,
 				5A156F9A2178539F00A617AD /* Assets.xcassets in Resources */,
 				5A156F982178539C00A617AD /* Main.storyboard in Resources */,
+				5A156FA621789EF400A617AD /* sample.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
